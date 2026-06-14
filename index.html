@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J&W Fios e Cabos - Catálogo Técnico de Produtos</title>
+    <style>
+        :root {
+            --primary-color: #2F4F2F; /* Verde Musgo Escuro */
+            --secondary-color: #4A704A; /* Verde Musgo Médio */
+            --accent-color: #D4AF37; /* Dourado Padrão JW */
+            --accent-hover: #AA8C2C; /* Dourado Escuro para Hover */
+            --dark-color: #1E291E; /* Grafite com tom verde-oliva bem escuro */
+            --light-color: #F4F7F4; /* Fundo claro acinzentado esverdeado */
+            --text-color: #2C3E2C; /* Texto escuro adaptado */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        .logo-area h1 {
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            color: var(--accent-color);
+        }
+
+        .logo-area p {
+            font-size: 1rem;
+            color: #E2E8E2;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(47, 79, 47, 0.9), rgba(30, 41, 30, 0.9)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            font-weight: 300;
+            color: #FFFFFF;
+        }
+
+        .hero .badge {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .hero h3 {
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            letter-spacing: 1px;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Seções */
+        section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #E2E8E2;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2.section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Tabelas */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 25px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            border: 1px solid #E2E8E2;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            text-align: left;
+            padding: 14px 15px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #E2E8E2;
+            font-size: 0.9rem;
+        }
+
+        tr:nth-child(even) td {
+            background-color: var(--light-color);
+        }
+
+        .table-notes {
+            font-size: 0.8rem;
+            color: #556B2F;
+            font-style: italic;
+            margin-top: -15px;
+            margin-bottom: 25px;
+        }
+
+        /* Destaques e Alertas */
+        .alert-box {
+            background-color: #F0F5F0;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 30px 0;
+            border-top: 1px solid #E2E8E2;
+            border-right: 1px solid #E2E8E2;
+            border-bottom: 1px solid #E2E8E2;
+        }
+
+        .alert-box strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Listas */
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+
+        /* Contato / Ações */
+        .contact-card {
+            background-color: var(--light-color);
+            border: 1px solid var(--secondary-color);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .btn-action {
+            display: inline-block;
+            background-color: #25d366; /* Mantido verde padrão do WhatsApp por usabilidade comercial */
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 15px 10px;
+            transition: background 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .btn-action:hover {
+            background-color: #1ebd56;
+        }
+
+        .btn-email {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+        }
+
+        .btn-email:hover {
+            background-color: var(--accent-hover);
+            color: white;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--dark-color);
+            color: #A3B8A3;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.85rem;
+            border-top: 3px solid var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <h1>J&W</h1>
+            <p>Fios e Cabos — Distribuidora Direto da Fábrica</p>
+        </div>
+    </header>
+
+    <div class="hero">
+        <span class="badge">2026 Edição Corporativa</span>
+        <h2>"A energia que move o seu projeto com a segurança que você exige."</h2>
+        <h3>CATÁLOGO TÉCNICO DE PRODUTOS</h3>
+        <p style="text-align: center; margin-top: 10px; color: #E2E8E2;">Linha de Condutores Elétricos de Alta Performance</p>
+    </div>
+
+    <div class="container">
+
+        <!-- 1. Apresentação Institucional -->
+        <section id="institucional">
+            <h2 class="section-title">1. Apresentação Institucional</h2>
+            <p>A J&W Fios e Cabos atua estrategicamente como distribuidora direto da fábrica, conectando os maiores e mais tecnológicos centers de fabricação de condutores elétricos ao seu projeto. Essa posição de revenda autorizada nos permite garantir aos nossos clientes um fornecimento ágil, preços altamente competitivos e lotes de materiais com procedência 100% certificada e homologada.</p>
+            <p>Nossas linhas de produtos atendem perfeitamente a projetos residenciais de alto padrão, loteamentos, redes de distribuição e grandes infraestruturas industriais que exigem máxima segurança técnica.</p>
+        </section>
+
+        <!-- 2. Linha Residencial, Comercial e Industrial -->
+        <section id="linha-baixa-tensao">
+            <h2 class="section-title">2. Linha Residencial, Comercial e Industrial (Baixa Tensão - Cobre)</h2>
+            <p>Indicados para instalações internas fixas, circuitos de força, iluminação e painéis industriais. Nossos cabos de cobre possuem propriedades essenciais como excelente flexibilidade para passagem em eletrodutos e isolamentos de alta resistência.</p>
+            
+            <h3 style="color: var(--secondary-color); margin: 20px 0 10px 0;">Cabo Flexível J&W Premium 750V/1kV</h3>
+            <p>Composto por fios de cobre eletrolítico nus, têmpera mole. Abaixo, nossa grade técnica completa que se estende das seções básicas até as de alta potência industrial (do 1,5 mm² ao 240 mm²):</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Seção Nominal (mm²)</th>
+                            <th>Diâmetro Nominal do Condutor (mm)</th>
+                            <th>Espessura de Isolamento (mm)</th>
+                            <th>Capacidade de Corrente (A)*</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1,5</td><td>1,5</td><td>0,7</td><td>15,5</td></tr>
+                        <tr><td>2,5</td><td>1,9</td><td>0,8</td><td>21,0</td></tr>
+                        <tr><td>4,0</td><td>2,4</td><td>0,8</td><td>28,0</td></tr>
+                        <tr><td>6,0</td><td>3,0</td><td>0,8</td><td>36,0</td></tr>
+                        <tr><td>10,0</td><td>3,9</td><td>1,0</td><td>50,0</td></tr>
+                        <tr><td>16,0</td><td>4,9</td><td>1,0</td><td>68,0</td></tr>
+                        <tr><td>25,0</td><td>6,2</td><td>1,2</td><td>89,0</td></tr>
+                        <tr><td>35,0</td><td>7,3</td><td>1,2</td><td>111,5</td></tr>
+                        <tr><td>50,0</td><td>8,7</td><td>1,4</td><td>134,0</td></tr>
+                        <tr><td>70,0</td><td>10,4</td><td>1,4</td><td>171,0</td></tr>
+                        <tr><td>95,0</td><td>12,3</td><td>1,6</td><td>207,0</td></tr>
+                        <tr><td>120,0</td><td>13,8</td><td>1,6</td><td>240,0</td></tr>
+                        <tr><td>150,0</td><td>15,4</td><td>1,8</td><td>275,0</td></tr>
+                        <tr><td>185,0</td><td>17,3</td><td>2,0</td><td>314,0</td></tr>
+                        <tr><td>240,0</td><td>20,0</td><td>2,2</td><td>373,0</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="table-notes">*Capacidades de corrente de referência para métodos de instalação padrão conforme NBR 5410, condutores de cobre em eletrodutos ou calhas ventiladas.</p>
+        </section>
+
+        <!-- 3. Linha de Redes e Distribuição -->
+        <section id="linha-aluminio">
+            <h2 class="section-title">3. Linha de Redes e Distribuição (Alumínio Nu e Neutro)</h2>
+            <p>Desenvolvidos especialmente para linhas aéreas de distribuição de energia urbana, rural e ramais de entrada. Nossa linha de alumínio combina leveza estrutural com excelente custo-benefício de revenda direta.</p>
+            
+            <h3 style="color: var(--secondary-color); margin: 20px 0 10px 0;">Cabos de Alumínio Nu (CAA / CA) e Alumínio Neutro</h3>
+            <p>Disponibilizamos a gama completa de bitolas que vão do 10 mm² ao 240 mm² atendendo a todas as necessidades de infraestrutura energética.</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bitola / Seção Nominal (mm²)</th>
+                            <th>Tipo de Condutor Disponível</th>
+                            <th>Análise / Aplicação Principal</th>
+                            <th>Normas de Referência</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10 a 35</td>
+                            <td>Alumínio Nu / Neutro Isolado</td>
+                            <td>Redes secundárias e ramais de ligação</td>
+                            <td>NBR 7285/NBR 10298</td>
+                        </tr>
+                        <tr>
+                            <td>50 a 95</td>
+                            <td>Alumínio Nu (CA/CAA) / Neutro Sustentação</td>
+                            <td>Distribuição urbana e rural de média tensão</td>
+                            <td>NBR 7271/NBR 10298</td>
+                        </tr>
+                        <tr>
+                            <td>120 a 240</td>
+                            <td>Alumínio Nu de Alta Capacidade</td>
+                            <td>Linhas de transmissão primárias e alimentadores</td>
+                            <td>NBR 7271/NBR 7285</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="alert-box">
+                <p style="margin-bottom: 0;"><strong>Garantia de Certificação e Procedência:</strong> Como revendedores autorizados direto de fábrica, garantimos que todos os lotes fornecidos acompanham laudos técnicos e certificados de ensaios elétricos realizados nos laboratórios do fabricante, atendendo estritamente às normas vigentes da ABNT (NBR NM 247-3, NBR 7271 e NBR 10298).</p>
+            </div>
+        </section>
+
+        <!-- 4. Especificações Logísticas e Comerciais -->
+        <section id="logistica">
+            <h2 class="section-title">4. Especificações Logísticas e Comerciais</h2>
+            <ul>
+                <li><strong>Linha de Cobre Flexível:</strong> Rolos fechados de 100 metros (para bitolas residenciais comuns) ou fracionamento em bobinas para seções de alta potência.</li>
+                <li><strong>Linha de Alumínio (10 ao 240):</strong> Distribuição exclusiva em bobinas de madeira industriais, otimizadas para faturamento e logística de grandes obras.</li>
+            </ul>
+        </section>
+
+        <!-- 5. Solicitação de Cotações -->
+        <section id="cotacoes">
+            <h2 class="section-title">5. Solicitação de Cotações</h2>
+            <p>Por atuarmos no modelo de distribuição direto, trabalhamos com tabelas de preços diferenciadas conforme o volume do lote solicitado pelo seu projeto.</p>
+            
+            <div class="contact-card">
+                <h3 style="color: var(--primary-color); margin-bottom: 15px;">Entre em contato com o nosso departamento de vendas</h3>
+                
+                <a href="https://wa.me/5511913972783" class="btn-action" target="_blank">Falar no WhatsApp Comercial</a>
+                <a href="mailto:JWfiosecabos@jwfc.com" class="btn-action btn-email">Enviar E-mail de Propostas</a>
+                
+                <div class="contact-info">
+                    <p style="text-align: center; margin-bottom: 5px;">E-mail: JWfiosecabos@jwfc.com</p>
+                    <p style="text-align: center; margin-bottom: 0;">Escritório Central de Vendas: São Paulo, SP</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 J&W Fios e Cabos — Catálogo Técnico — Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
