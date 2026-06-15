@@ -3,284 +3,523 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J&W Fios e Cabos - Catálogo Técnico de Produtos</title>
+    <title>J&W Fios e Cabos - Catálogo Técnico Corporativo</title>
+    <!-- Google Fonts para dar o tom de sofisticação internacional -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary-color: #2F4F2F; /* Verde Musgo Escuro */
-            --secondary-color: #4A704A; /* Verde Musgo Médio */
-            --accent-color: #D4AF37; /* Dourado Padrão JW */
-            --accent-hover: #AA8C2C; /* Dourado Escuro para Hover */
-            --dark-color: #1E291E; /* Grafite com tom verde-oliva bem escuro */
-            --light-color: #F4F7F4; /* Fundo claro acinzentado esverdeado */
-            --text-color: #2C3E2C; /* Texto escuro adaptado */
+            --primary-moss: #1C331C;      /* Verde Musgo Profundo (Luxo e Solidez) */
+            --mid-moss: #2A4D2A;          /* Verde Musgo de Transição */
+            --gold-jw: #D4AF37;           /* Dourado Autêntico Metálico */
+            --gold-light: #F4E8C1;        /* Toque de ouro acetinado leve */
+            --dark-charcoal: #0F170F;     /* Fundo quase preto com nuance musgo */
+            --bg-light: #F7FAF7;          /* Fundo limpo contrastante */
+            --text-dark: #1C241C;
+            --text-muted: #627262;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #ffffff;
-            color: var(--text-color);
-            line-height: 1.6;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        /* Header / Navbar */
+        /* Moldura de Luxo ao redor do site em telas grandes */
+        @media (min-width: 1200px) {
+            body {
+                border: 12px solid var(--primary-moss);
+                min-height: 100vh;
+            }
+        }
+
+        /* Header Assinado com Alta Joalheria */
         header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 25px 20px;
+            background-color: var(--primary-moss);
+            padding: 40px 20px;
             text-align: center;
-            border-bottom: 4px solid var(--accent-color);
+            position: relative;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
         }
 
-        .logo-area h1 {
-            font-size: 2.5rem;
-            letter-spacing: 3px;
-            color: var(--accent-color);
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: var(--gold-jw);
         }
 
-        .logo-area p {
-            font-size: 1rem;
+        .brand-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--gold-jw);
+            letter-spacing: 12px;
+            line-height: 1;
+            margin-bottom: 10px;
+            text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .brand-subtitle {
+            font-size: 0.85rem;
             color: #E2E8E2;
             text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 1px;
+            letter-spacing: 6px;
+            font-weight: 400;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(47, 79, 47, 0.9), rgba(30, 41, 30, 0.9)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+        /* Hero / Manifesto de Engenharia */
+        .hero-section {
+            background: radial-gradient(circle at center, var(--mid-moss) 0%, var(--primary-moss) 100%);
             color: white;
+            padding: 100px 20px;
             text-align: center;
-            padding: 60px 20px;
-            border-bottom: 1px solid var(--secondary-color);
+            position: relative;
         }
 
-        .hero h2 {
-            font-size: 1.8rem;
-            font-style: italic;
-            max-width: 800px;
-            margin: 0 auto 20px auto;
+        .hero-badge {
+            border: 1px solid var(--gold-jw);
+            color: var(--gold-jw);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-weight: bold;
+            background: rgba(214, 175, 55, 0.05);
+        }
+
+        .hero-quote {
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 300;
+            font-size: 2.2rem;
+            line-height: 1.4;
+            max-width: 900px;
+            margin: 0 auto 30px auto;
             color: #FFFFFF;
         }
 
-        .hero .badge {
-            background-color: var(--accent-color);
-            color: var(--dark-color);
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 4px;
-            font-weight: bold;
-            text-transform: uppercase;
+        .hero-quote span {
+            color: var(--gold-jw);
+            font-weight: 500;
+        }
+
+        .catalog-label {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            color: var(--gold-jw);
+            margin-bottom: 5px;
+        }
+
+        .catalog-sublabel {
             font-size: 0.9rem;
-            margin-bottom: 15px;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        .hero h3 {
-            font-size: 1.4rem;
-            color: var(--accent-color);
-            letter-spacing: 1px;
-        }
-
-        /* Container Principal */
-        .container {
-            max-width: 1100px;
+        /* Layout em Container Grid */
+        .main-wrapper {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 80px 20px;
         }
 
-        /* Seções */
-        section {
-            margin-bottom: 50px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #E2E8E2;
+        /* Grid de Seções Modernas */
+        .section-card {
+            background: white;
+            border: 1px solid rgba(42, 77, 42, 0.1);
+            border-radius: 24px;
+            padding: 50px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 30px rgba(28, 51, 28, 0.02);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
-        section:last-of-type {
-            border-bottom: none;
+        .section-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(28, 51, 28, 0.05);
         }
 
-        h2.section-title {
-            color: var(--primary-color);
-            font-size: 1.8rem;
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 35px;
+            gap: 20px;
+        }
+
+        .section-number {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: var(--gold-jw);
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            color: var(--primary-moss);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .text-block {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-dark);
             margin-bottom: 20px;
-            border-left: 5px solid var(--accent-color);
-            padding-left: 15px;
         }
 
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        /* Tabelas */
-        .table-responsive {
+        /* Nova Engenharia de Tabelas (Estilo Painel Premium) */
+        .table-container {
             overflow-x: auto;
-            margin: 25px 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-radius: 8px;
-            border: 1px solid #E2E8E2;
+            margin: 40px 0 20px 0;
+            border-radius: 16px;
+            border: 1px solid rgba(42, 77, 42, 0.15);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 600px;
+            min-width: 750px;
+            text-align: left;
         }
 
         th {
-            background-color: var(--primary-color);
-            color: var(--accent-color);
-            text-align: left;
-            padding: 14px 15px;
-            font-size: 0.85rem;
+            background-color: var(--primary-moss);
+            color: var(--gold-jw);
+            padding: 20px;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-bottom: 3px solid var(--accent-color);
+            letter-spacing: 2px;
+            font-weight: 700;
+            border-bottom: 2px solid var(--gold-jw);
         }
 
         td {
-            padding: 10px 15px;
-            border-bottom: 1px solid #E2E8E2;
-            font-size: 0.9rem;
+            padding: 18px 20px;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(42, 77, 42, 0.08);
+            color: var(--text-dark);
         }
 
-        tr:nth-child(even) td {
-            background-color: var(--light-color);
+        tr:nth-child(even) {
+            background-color: rgba(42, 77, 42, 0.02);
         }
 
-        .table-notes {
+        tr:hover td {
+            background-color: rgba(214, 175, 55, 0.05);
+            color: var(--primary-moss);
+            font-weight: 500;
+        }
+
+        .table-caption {
             font-size: 0.8rem;
-            color: #556B2F;
+            color: var(--text-muted);
             font-style: italic;
-            margin-top: -15px;
-            margin-bottom: 25px;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        /* Destaques e Alertas */
-        .alert-box {
-            background-color: #F0F5F0;
-            border-left: 5px solid var(--accent-color);
-            padding: 20px;
-            border-radius: 0 8px 8px 0;
-            margin: 30px 0;
-            border-top: 1px solid #E2E8E2;
-            border-right: 1px solid #E2E8E2;
-            border-bottom: 1px solid #E2E8E2;
+        /* Bloco de Certificação Estilo Selo Real */
+        .certification-shield {
+            background: linear-gradient(135deg, #FFFFFF 0%, var(--bg-light) 100%);
+            border-left: 4px solid var(--gold-jw);
+            border-radius: 0 16px 16px 0;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: inset 0 0 20px rgba(42, 77, 42, 0.02);
         }
 
-        .alert-box strong {
-            color: var(--primary-color);
+        .certification-shield strong {
+            color: var(--primary-moss);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
-        /* Listas */
-        ul {
-            margin-left: 20px;
-            margin-bottom: 20px;
+        /* Lista Logística Estilizada */
+        .logistic-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 30px;
         }
 
-        li {
+        @media (min-width: 768px) {
+            .logistic-list {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .logistic-item {
+            background: var(--bg-light);
+            border-radius: 16px;
+            padding: 30px;
+            border-top: 3px solid var(--primary-moss);
+        }
+
+        .logistic-item strong {
+            color: var(--primary-moss);
+            font-size: 1.1rem;
+            display: block;
             margin-bottom: 10px;
         }
-        
-        li strong {
-            color: var(--primary-color);
-        }
 
-        /* Contato / Ações */
-        .contact-card {
-            background-color: var(--light-color);
-            border: 1px solid var(--secondary-color);
-            border-radius: 8px;
-            padding: 30px;
-            text-align: center;
-        }
-
-        .btn-action {
-            display: inline-block;
-            background-color: #25d366; /* Mantido verde padrão do WhatsApp por usabilidade comercial */
+        /* Área de Cotação de Alta Conversão */
+        .cta-box {
+            background-color: var(--primary-moss);
             color: white;
-            padding: 12px 30px;
-            border-radius: 5px;
+            border-radius: 24px;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(214, 175, 55, 0.2);
+        }
+
+        .cta-box h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: var(--gold-jw);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .action-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0 30px 0;
+        }
+
+        @media (min-width: 600px) {
+            .action-container {
+                flex-direction: row;
+            }
+        }
+
+        .btn-premium {
+            padding: 18px 35px;
+            border-radius: 50px;
+            font-weight: 700;
             text-decoration: none;
-            font-weight: bold;
-            margin: 15px 10px;
-            transition: background 0.3s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .btn-action:hover {
-            background-color: #1ebd56;
+        .btn-gold {
+            background-color: var(--gold-jw);
+            color: var(--primary-moss);
+            box-shadow: 0 4px 15px rgba(214, 175, 55, 0.3);
         }
 
-        .btn-email {
-            background-color: var(--accent-color);
-            color: var(--dark-color);
+        .btn-gold:hover {
+            background-color: #FFFFFF;
+            color: var(--primary-moss);
+            transform: translateY(-2px);
         }
 
-        .btn-email:hover {
-            background-color: var(--accent-hover);
+        .btn-outline {
+            border: 2px solid rgba(255,255,255,0.2);
             color: white;
         }
 
-        .contact-info {
-            margin-top: 20px;
-            font-weight: bold;
-            color: var(--primary-color);
+        .btn-outline:hover {
+            border-color: var(--gold-jw);
+            color: var(--gold-jw);
+            background: rgba(214, 175, 55, 0.05);
+            transform: translateY(-2px);
         }
 
-        /* Rodapé */
+        .location-badge {
+            font-size: 0.9rem;
+            color: var(--gold-light);
+            letter-spacing: 1px;
+            margin-top: 20px;
+            opacity: 0.9;
+        }
+
+        /* Rodapé Solene com Links Diretos Integrados */
         footer {
-            background-color: var(--dark-color);
-            color: #A3B8A3;
+            background-color: var(--dark-charcoal);
+            color: rgba(255,255,255,0.4);
             text-align: center;
-            padding: 25px;
+            padding: 50px 20px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-top: 1px solid rgba(214, 175, 55, 0.1);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-link-item {
+            color: var(--gold-jw);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-transform: none; /* Mantém formatos originais legíveis */
             font-size: 0.85rem;
-            border-top: 3px solid var(--accent-color);
+        }
+
+        .footer-link-item:hover {
+            color: #FFFFFF;
+            transform: translateY(-1px);
+        }
+
+        .copyright-text {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.3);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Botão Flutuante Exclusivo do WhatsApp (Quiet Luxury Style) */
+        .whatsapp-floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-moss);
+            color: var(--gold-jw);
+            border: 1.5px solid var(--gold-jw);
+            padding: 14px 24px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 9999;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .whatsapp-floating-btn::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #25D366;
+            border-radius: 50px;
+            box-shadow: 0 0 8px #25D366;
+        }
+
+        .whatsapp-floating-btn:hover {
+            background-color: var(--gold-jw);
+            color: var(--primary-moss);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(214, 175, 55, 0.25);
+        }
+
+        @media (max-width: 480px) {
+            .whatsapp-floating-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 18px;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Ajustes de Responsividade Gerais */
+        @media (max-width: 768px) {
+            .brand-title { font-size: 2.2rem; letter-spacing: 6px; }
+            .hero-quote { font-size: 1.5rem; }
+            .section-card { padding: 30px 20px; }
+            .section-header { flex-direction: column; align-items: flex-start; gap: 5px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Corporativo -->
     <header>
-        <div class="logo-area">
-            <h1>J&W</h1>
-            <p>Fios e Cabos — Distribuidora Direto da Fábrica</p>
-        </div>
+        <div class="brand-title">J&W</div>
+        <div class="brand-subtitle">Fios e Cabos — Distribuidora Direto da Fábrica</div>
     </header>
 
-    <div class="hero">
-        <span class="badge">2026 Edição Corporativa</span>
-        <h2>"A energia que move o seu projeto com a segurança que você exige."</h2>
-        <h3>CATÁLOGO TÉCNICO DE PRODUTOS</h3>
-        <p style="text-align: center; margin-top: 10px; color: #E2E8E2;">Linha de Condutores Elétricos de Alta Performance</p>
+    <!-- Painel Hero Imperial -->
+    <div class="hero-section">
+        <div class="hero-badge">2026 Edição Corporativa</div>
+        <h2 class="hero-quote">
+            "A energia que move o seu projeto com a <span>segurança que você exige</span>."
+        </h2>
+        <div class="catalog-label">Catálogo Técnico de Produtos</div>
+        <div class="catalog-sublabel">Linha de Condutores Elétricos de Alta Performance</div>
     </div>
 
-    <div class="container">
+    <!-- Wrapper de Conteúdo -->
+    <div class="main-wrapper">
 
         <!-- 1. Apresentação Institucional -->
-        <section id="institucional">
-            <h2 class="section-title">1. Apresentação Institucional</h2>
-            <p>A J&W Fios e Cabos atua estrategicamente como distribuidora direto da fábrica, conectando os maiores e mais tecnológicos centers de fabricação de condutores elétricos ao seu projeto. Essa posição de revenda autorizada nos permite garantir aos nossos clientes um fornecimento ágil, preços altamente competitivos e lotes de materiais com procedência 100% certificada e homologada.</p>
-            <p>Nossas linhas de produtos atendem perfeitamente a projetos residenciais de alto padrão, loteamentos, redes de distribuição e grandes infraestruturas industriais que exigem máxima segurança técnica.</p>
+        <section class="section-card" id="institucional">
+            <div class="section-header">
+                <div class="section-number">I</div>
+                <h2 class="section-title">Apresentação Institucional</h2>
+            </div>
+            <p class="text-block">A J&W Fios e Cabos atua estrategicamente como distribuidora direto da fábrica, conectando os maiores e mais tecnológicos centros de fabricação de condutores elétricos ao seu projeto. Essa posição de revenda autorizada nos permite garantir aos nossos clientes um fornecimento ágil, preços altamente competitivos e lotes de materiais com procedência 100% certificada e homologada.</p>
+            <p class="text-block">Nossas linhas de produtos atendem perfeitamente a projetos residenciais de alto padrão, loteamentos, redes de distribuição e grandes infraestruturas industriais que exigem máxima segurança técnica.</p>
         </section>
 
         <!-- 2. Linha Residencial, Comercial e Industrial -->
-        <section id="linha-baixa-tensao">
-            <h2 class="section-title">2. Linha Residencial, Comercial e Industrial (Baixa Tensão - Cobre)</h2>
-            <p>Indicados para instalações internas fixas, circuitos de força, iluminação e painéis industriais. Nossos cabos de cobre possuem propriedades essenciais como excelente flexibilidade para passagem em eletrodutos e isolamentos de alta resistência.</p>
+        <section class="section-card" id="linha-cobre">
+            <div class="section-header">
+                <div class="section-number">II</div>
+                <h2 class="section-title">Linha Residencial, Comercial e Industrial (Baixa Tensão - Cobre)</h2>
+            </div>
+            <p class="text-block">Indicados para instalações internas fixas, circuitos de força, iluminação e painéis industriais. Nossos cabos de cobre possuem propriedades essenciais como excelente flexibilidade para passagem em eletrodutos e isolamentos de alta resistência.</p>
             
-            <h3 style="color: var(--secondary-color); margin: 20px 0 10px 0;">Cabo Flexível J&W Premium 750V/1kV</h3>
-            <p>Composto por fios de cobre eletrolítico nus, têmpera mole. Abaixo, nossa grade técnica completa que se estende das seções básicas até as de alta potência industrial (do 1,5 mm² ao 240 mm²):</p>
+            <h3 style="color: var(--mid-moss); font-size: 1.25rem; margin-top: 30px; font-weight: 700;">Cabo Flexível J&W Premium 750V/1kV</h3>
+            <p class="text-block" style="color: var(--text-muted); font-size: 0.95rem;">Composto por fios de cobre eletrolítico nus, têmpera mole. Abaixo, nossa grade técnica completa que se estende das seções básicas até as de alta potência industrial (do 1,5 mm² ao 240 mm²):</p>
 
-            <div class="table-responsive">
+            <div class="table-container">
                 <table>
                     <thead>
                         <tr>
@@ -309,18 +548,23 @@
                     </tbody>
                 </table>
             </div>
-            <p class="table-notes">*Capacidades de corrente de referência para métodos de instalação padrão conforme NBR 5410, condutores de cobre em eletrodutos ou calhas ventiladas.</p>
+            <div class="table-caption">
+                <span>* Capacidades de corrente de referência para métodos de instalação padrão conforme NBR 5410, condutores de cobre em eletrodutos ou calhas ventiladas.</span>
+            </div>
         </section>
 
         <!-- 3. Linha de Redes e Distribuição -->
-        <section id="linha-aluminio">
-            <h2 class="section-title">3. Linha de Redes e Distribuição (Alumínio Nu e Neutro)</h2>
-            <p>Desenvolvidos especialmente para linhas aéreas de distribuição de energia urbana, rural e ramais de entrada. Nossa linha de alumínio combina leveza estrutural com excelente custo-benefício de revenda direta.</p>
+        <section class="section-card" id="linha-aluminio">
+            <div class="section-header">
+                <div class="section-number">III</div>
+                <h2 class="section-title">Linha de Redes e Distribuição (Alumínio Nu e Neutro)</h2>
+            </div>
+            <p class="text-block">Desenvolvidos especialmente para linhas aéreas de distribuição de energia urbana, rural e ramais de entrada. Nossa linha de alumínio combina leveza estrutural com excelente custo-benefício de revenda direta.</p>
             
-            <h3 style="color: var(--secondary-color); margin: 20px 0 10px 0;">Cabos de Alumínio Nu (CAA / CA) e Alumínio Neutro</h3>
-            <p>Disponibilizamos a gama completa de bitolas que vão do 10 mm² ao 240 mm² atendendo a todas as necessidades de infraestrutura energética.</p>
+            <h3 style="color: var(--mid-moss); font-size: 1.25rem; margin-top: 30px; font-weight: 700;">Cabos de Alumínio Nu (CAA / CA) e Alumínio Neutro</h3>
+            <p class="text-block" style="color: var(--text-muted); font-size: 0.95rem;">Disponibilizamos a gama completa de bitolas que vão do 10 mm² ao 240 mm² atendendo a todas as necessidades de infraestrutura energética.</p>
 
-            <div class="table-responsive">
+            <div class="table-container">
                 <table>
                     <thead>
                         <tr>
@@ -332,63 +576,90 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>10 a 35</td>
+                            <td style="font-weight: 600;">10 a 35</td>
                             <td>Alumínio Nu / Neutro Isolado</td>
                             <td>Redes secundárias e ramais de ligação</td>
-                            <td>NBR 7285/NBR 10298</td>
+                            <td style="color: var(--mid-moss); font-weight: 500;">NBR 7285/NBR 10298</td>
                         </tr>
                         <tr>
-                            <td>50 a 95</td>
+                            <td style="font-weight: 600;">50 a 95</td>
                             <td>Alumínio Nu (CA/CAA) / Neutro Sustentação</td>
                             <td>Distribuição urbana e rural de média tensão</td>
-                            <td>NBR 7271/NBR 10298</td>
+                            <td style="color: var(--mid-moss); font-weight: 500;">NBR 7271/NBR 10298</td>
                         </tr>
                         <tr>
-                            <td>120 a 240</td>
+                            <td style="font-weight: 600;">120 a 240</td>
                             <td>Alumínio Nu de Alta Capacidade</td>
                             <td>Linhas de transmissão primárias e alimentadores</td>
-                            <td>NBR 7271/NBR 7285</td>
+                            <td style="color: var(--mid-moss); font-weight: 500;">NBR 7271/NBR 7285</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="alert-box">
-                <p style="margin-bottom: 0;"><strong>Garantia de Certificação e Procedência:</strong> Como revendedores autorizados direto de fábrica, garantimos que todos os lotes fornecidos acompanham laudos técnicos e certificados de ensaios elétricos realizados nos laboratórios do fabricante, atendendo estritamente às normas vigentes da ABNT (NBR NM 247-3, NBR 7271 e NBR 10298).</p>
+            <div class="certification-shield">
+                <strong>Garantia de Certificação e Procedência</strong>
+                <p class="text-block" style="margin-bottom: 0; font-size: 0.95rem; text-align: left;">Como revendedores autorizados direto de fábrica, garantimos que todos os lotes fornecidos acompanham laudos técnicos e certificados de ensaios elétricos realizados nos laboratórios do fabricante, atendendo estritamente às normas vigentes da ABNT (NBR NM 247-3, NBR 7271 e NBR 10298).</p>
             </div>
         </section>
 
         <!-- 4. Especificações Logísticas e Comerciais -->
-        <section id="logistica">
-            <h2 class="section-title">4. Especificações Logísticas e Comerciais</h2>
-            <ul>
-                <li><strong>Linha de Cobre Flexível:</strong> Rolos fechados de 100 metros (para bitolas residenciais comuns) ou fracionamento em bobinas para seções de alta potência.</li>
-                <li><strong>Linha de Alumínio (10 ao 240):</strong> Distribuição exclusiva em bobinas de madeira industriais, otimizadas para faturamento e logística de grandes obras.</li>
-            </ul>
+        <section class="section-card" id="logistica">
+            <div class="section-header">
+                <div class="section-number">IV</div>
+                <h2 class="section-title">Especificações Logísticas e Comerciais</h2>
+            </div>
+            
+            <div class="logistic-list">
+                <div class="logistic-item">
+                    <strong>Linha de Cobre Flexível</strong>
+                    <p style="font-size: 0.95rem; color: var(--text-dark);">Rolos fechados de 100 metros (para bitolas residenciais comuns) ou fracionamento em bobinas para seções de alta potência.</p>
+                </div>
+                <div class="logistic-item">
+                    <strong>Linha de Alumínio (10 ao 240)</strong>
+                    <p style="font-size: 0.95rem; color: var(--text-dark);">Distribuição exclusiva em bobinas de madeira industriais, otimizadas para faturamento e logística de grandes obras.</p>
+                </div>
+            </div>
         </section>
 
         <!-- 5. Solicitação de Cotações -->
-        <section id="cotacoes">
-            <h2 class="section-title">5. Solicitação de Cotações</h2>
-            <p>Por atuarmos no modelo de distribuição direto, trabalhamos com tabelas de preços diferenciadas conforme o volume do lote solicitado pelo seu projeto.</p>
+        <section class="cta-box" id="cotacoes">
+            <h3>V. Solicitação de Cotações</h3>
+            <p style="max-width: 600px; margin: 0 auto; opacity: 0.9; line-height: 1.6;">Por atuarmos no modelo de distribuição direto, trabalhamos com tabelas de preços diferenciadas conforme o volume do lote solicitado pelo seu projeto.</p>
             
-            <div class="contact-card">
-                <h3 style="color: var(--primary-color); margin-bottom: 15px;">Entre em contato com o nosso departamento de vendas</h3>
-                
-                <a href="https://wa.me/5511913972783" class="btn-action" target="_blank">Falar no WhatsApp Comercial</a>
-                <a href="mailto:JWfiosecabos@jwfc.com" class="btn-action btn-email">Enviar E-mail de Propostas</a>
-                
-                <div class="contact-info">
-                    <p style="text-align: center; margin-bottom: 5px;">E-mail: JWfiosecabos@jwfc.com</p>
-                    <p style="text-align: center; margin-bottom: 0;">Escritório Central de Vendas: São Paulo, SP</p>
-                </div>
+            <div class="action-container">
+                <a href="https://wa.me/5511913972783?text=ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento" target="_blank" class="btn-premium btn-gold">
+                    WhatsApp Comercial
+                </a>
+                <a href="mailto:JWfiosecabos@jwfc.com " class="btn-premium btn-outline">
+                    JWfiosecabos@jwfc.com 
+                </a>
+            </div>
+            
+            <div class="location-badge">
+                Escritório Central de Vendas: <strong>São Paulo, SP</strong>
             </div>
         </section>
 
     </div>
 
+    <!-- Botão Flutuante Corporativo para WhatsApp -->
+    <a href="https://wa.me/5511913972783?text=ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento" class="whatsapp-floating-btn" target="_blank">
+        Solicitar Orçamento
+    </a>
+
+    <!-- Rodapé Oficial com Links de Comunicação Direta -->
     <footer>
-        <p>© 2026 J&W Fios e Cabos — Catálogo Técnico — Todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="https://instagram.com/jwfiosecabos" class="footer-link-item" target="_blank">@jwfiosecabos</a>
+            <span style="color: rgba(255,255,255,0.15)">|</span>
+            <a href="mailto:JWfiosecabos@jwfc.com " class="footer-link-item">JWfiosecabos@jwfc.com </a>
+            <span style="color: rgba(255,255,255,0.15)">|</span>
+            <a href="https://wa.me/5511913972783?text=ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento" class="footer-link-item" target="_blank">WhatsApp Vendas</a>
+        </div>
+        <div class="copyright-text">
+            J&W Fios e Cabos — Catálogo Técnico © 2026 — Edição Corporativa. Todos os direitos reservados.
+        </div>
     </footer>
 
 </body>
